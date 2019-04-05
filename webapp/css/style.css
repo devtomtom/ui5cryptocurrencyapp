@@ -1,1 +1,6 @@
 /* add your custom styles here */
+*{
+    background: black !important;
+    color: white !important;
+    border: 0px !important;
+}
