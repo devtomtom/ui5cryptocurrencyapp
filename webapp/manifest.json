@@ -3,14 +3,12 @@
 	"sap.app": {
 		"id": "ui5.cryptocurrency.app",
 		"type": "application",
-		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
-		"resources": "resources.json",
-		"ach": "ach"
+		"title": "UI5 Crypto App",
+		"description": "-",
+		"resources": "resources.json"
 	},
 
 	"sap.ui": {
@@ -50,12 +48,6 @@
 			"cozy": true
 		},
 		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "ui5.cryptocurrency.app.i18n.i18n"
-				}
-			}
 		},
 		"resources": {
 			"css": [{
@@ -83,7 +75,7 @@
 					"viewName": "Home",
 					"viewId": "home",
 					"viewLevel": 1,
-					"title": "{i18n>title}"
+					"title": "Home"
 				}
 			}
 		}
