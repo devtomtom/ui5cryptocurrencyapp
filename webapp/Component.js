@@ -18,6 +18,17 @@ sap.ui.define([
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
+			jQuery.ajax("model/live.json").then((oCurrencyData) => {
+				oCurrencyData.flat = [];
+				for (var sKey in oCurrencyData.rates) {
+					oCurrencyData.flat.push({
+						key: sKey,
+						rate: oCurrencyData.rates[sKey]
+					});
+				}
+				this.getModel("liveData").setData(oCurrencyData);
+			});
+
 			// create the views based on the url/hash
 			this.getRouter().initialize();
 		}

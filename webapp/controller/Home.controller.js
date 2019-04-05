@@ -6,7 +6,6 @@ sap.ui.define([
 	return Controller.extend("ui5.cryptocurrency.app.controller.App", {
 
 		onInit: function () {
-
 		}
 	});
 });

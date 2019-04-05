@@ -48,6 +48,9 @@
 			"cozy": true
 		},
 		"models": {
+			"liveData": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
 		},
 		"resources": {
 			"css": [{
