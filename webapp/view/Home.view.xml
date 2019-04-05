@@ -1,11 +1,26 @@
 <mvc:View
+	id="HomeBoy"
 	controllerName="ui5.cryptocurrency.app.controller.Home"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page
 		id="page"
-		title="{i18n>title}">
-		<content></content>
+		title="UI5 Crypto Currency App">
+		<content>
+			<List
+				id="cryptolist"
+				items="{liveData>/flat}">
+				<StandardListItem
+					title="{liveData>key}"
+					description="{
+						parts: [{path: 'liveData>rate'}, {path: 'liveData>key'}],
+						type: 'sap.ui.model.type.Currency',
+						formatOptions: {
+							decimals: 7
+						}
+					}"/>
+			</List>
+		</content>
 	</Page>
 </mvc:View>
