@@ -1,8 +1,8 @@
 {
-  "name": "BasicTemplate",
+  "name": "UI5CryptoCurrencyApp",
   "version": "1.0.0",
   "author": "SAP SE",
-  "description": "UI5 Demo App - Basic Template",
+  "description": "UI5 Crypto Currency App",
   "private": true,
   "scripts": {
     "start": "ui5 serve",

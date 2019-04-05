@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "sap.ui.demo.basicTemplate",
+		"id": "ui5.cryptocurrency.app",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -32,7 +32,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.demo.basicTemplate.view.App",
+			"viewName": "ui5.cryptocurrency.app.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -53,7 +53,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.ui.demo.basicTemplate.i18n.i18n"
+					"bundleName": "ui5.cryptocurrency.app.i18n.i18n"
 				}
 			}
 		},
@@ -66,7 +66,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "sap.ui.demo.basicTemplate.view",
+				"viewPath": "ui5.cryptocurrency.app.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"async": true

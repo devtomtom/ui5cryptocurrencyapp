@@ -1,12 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"../model/formatter"
-], function(Controller, formatter) {
+], function(Controller) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.basicTemplate.controller.App", {
-
-		formatter: formatter,
+	return Controller.extend("ui5.cryptocurrency.app.controller.App", {
 
 		onInit: function () {
 
