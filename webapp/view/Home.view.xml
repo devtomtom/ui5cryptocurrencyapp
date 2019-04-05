@@ -1,6 +1,5 @@
 <mvc:View
-	id="HomeBoy"
-	controllerName="ui5.cryptocurrency.app.controller.Home"
+	id="home"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
@@ -12,14 +11,13 @@
 				id="cryptolist"
 				items="{liveData>/flat}">
 				<StandardListItem
-					title="{liveData>key}"
+					title="{liveData>name}"
 					description="{
 						parts: [{path: 'liveData>rate'}, {path: 'liveData>key'}],
-						type: 'sap.ui.model.type.Currency',
-						formatOptions: {
-							decimals: 7
-						}
-					}"/>
+						type: 'sap.ui.model.type.Currency'
+					}"
+					iconDensityAware="false"
+					icon="{liveData>url}"/>
 			</List>
 		</content>
 	</Page>
