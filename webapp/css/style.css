@@ -3,4 +3,6 @@
     background: black !important;
     color: white !important;
     border: 0px !important;
+    outline: none;
+    user-select: none;
 }
