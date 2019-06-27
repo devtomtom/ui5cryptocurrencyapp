@@ -19,29 +19,15 @@ sap.ui.define([
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
-			var oIntervalTrigger = new IntervalTrigger(1000),
-				aCryptoManifest, mAll;
-
 			jQuery.ajax("img/icons/manifest.json").then((aCryptoManifest) => {
 
-				mAll = aCryptoManifest.reduce((mAll, oCurrency) => {
+				let mAll = aCryptoManifest.reduce((mAll, oCurrency) => {
 					mAll[oCurrency.symbol] =  oCurrency.name;
 					return mAll;
 				}, {});
 
 				jQuery.ajax("model/live.json").then((oLiveData) => {
 					this.flatten(oLiveData, mAll);
-				});
-
-				oIntervalTrigger.addListener(() => {
-					var oModel = this.getModel("liveData");
-					var oData = oModel.getData();
-					if (oData.flat) {
-						oData.flat.forEach((oNais) => {
-							oNais.rate = Math.random();
-						});
-						oModel.setData(oData);
-					}
 				});
 			});
 
@@ -67,7 +53,7 @@ sap.ui.define([
 						key: sKey,
 						name: mAll[sKey],
 						rate: Math.random(), //oLiveData.rates[sKey],
-						url: "img/icons/" + sKey.toLowerCase() + ".png"
+						url: `img/icons/${sKey.toLowerCase()}.png`
 					});
 				}
 			}

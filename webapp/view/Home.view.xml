@@ -8,6 +8,8 @@
 		title="UI5 Crypto Currency App">
 		<content>
 			<List
+				growing="true"
+				growingScrollToLoad="true"
 				id="cryptolist"
 				items="{liveData>/flat}">
 				<StandardListItem
