@@ -10,3 +10,7 @@
 .sapMSLIDescription {
     color: #00FF00 !important;
 }
+
+ul > li {
+    pointer-events: none;
+}

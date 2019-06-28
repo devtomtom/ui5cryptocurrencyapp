@@ -1,5 +1,6 @@
 <mvc:View
 	id="home"
+	controllerName="ui5.cryptocurrency.app.controller.Home"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">

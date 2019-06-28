@@ -1,7 +1,6 @@
 sap.ui.define([
-	"sap/ui/core/UIComponent",
-	"sap/ui/core/IntervalTrigger"
-], function(UIComponent, IntervalTrigger) {
+	"sap/ui/core/UIComponent"
+], function(UIComponent) {
 	"use strict";
 
 	return UIComponent.extend("ui5.cryptocurrency.app.Component", {
@@ -20,7 +19,6 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 
 			jQuery.ajax("img/icons/manifest.json").then((aCryptoManifest) => {
-
 				let mAll = aCryptoManifest.reduce((mAll, oCurrency) => {
 					mAll[oCurrency.symbol] =  oCurrency.name;
 					return mAll;
@@ -36,13 +34,13 @@ sap.ui.define([
 		},
 
 		flatten: function(oLiveData, mAll) {
-			var mConfig = {
+			let mConfig = {
 				DEFAULT: {
 					digits: 5
 				}
-			};
-
+			}
 			oLiveData.flat = [];
+
 			for (var sKey in oLiveData.rates) {
 				if (mAll[sKey]) {
 					mConfig[sKey] = {
@@ -52,13 +50,21 @@ sap.ui.define([
 					oLiveData.flat.push({
 						key: sKey,
 						name: mAll[sKey],
-						rate: Math.random(), //oLiveData.rates[sKey],
+						rate: oLiveData.rates[sKey],
 						url: `img/icons/${sKey.toLowerCase()}.png`
 					});
 				}
 			}
 
-			this.getModel("liveData").setData(oLiveData);
+			setInterval(() => {
+				if (oLiveData.flat) {
+					oLiveData.flat.forEach((oNais) => {
+						oNais.rate *= Math.random();
+					});
+					this.getModel("liveData").setData(oLiveData);
+				}
+			}, 2000);
+
 			sap.ui.getCore().getConfiguration().getFormatSettings().addCustomCurrencies(mConfig);
 		}
 	});

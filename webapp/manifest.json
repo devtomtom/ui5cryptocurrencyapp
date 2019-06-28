@@ -50,6 +50,9 @@
 		"models": {
 			"liveData": {
 				"type": "sap.ui.model.json.JSONModel"
+			},
+			"icons": {
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"resources": {
